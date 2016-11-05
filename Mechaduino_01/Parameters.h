@@ -7,34 +7,33 @@
 extern const String identifier;
 
 //---- Sample Frequenz -----
-extern volatile int Fs;
-
-//---- Filter Frequenz -----
-extern volatile int Fc;
+extern volatile int FSAMPLE;
+extern volatile int FPID;
 
 //---- PID Values -----
-extern volatile float pKp;
-extern volatile float pKi;
-extern volatile float pKd;
+extern volatile int Kp;
+extern volatile int Ki;
+extern volatile int Kd;
 
 //----current settings-----
-extern const int PEAKSPERSECOND;
 extern const float iMAX;
-extern const float iPEAK;
 
 //---- Lookup -----
-extern const PROGMEM float lookup[];
+extern const PROGMEM int lookup[];
 
 //---- Baudrate -----
 extern const int baudrate;
 
-//---- Pins -----
-extern const int ena_pin;
+//---- Enable Pins -----
+extern const bool use_enable_pin;
 
 
 //---- Step settings -----
 extern const int microstepping;
 extern const int steps_per_revolution;
 
-
+//---- Filter settings -----
+extern const char shifts;
+extern const int LM_SIZE;
+extern int LM[];
 #endif

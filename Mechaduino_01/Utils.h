@@ -7,13 +7,15 @@ void setupPins();
 
 void setupSPI();
 
+void setupPID();
+
 void stepInterrupt();
 
 void enaInterrupt();
 
 void dirInterrupt();
 
-void output(float theta, int effort);
+void output(int theta, int effort);
 
 void calibration();
 
@@ -24,8 +26,6 @@ void Serial_menu();
 void setpoint();
 
 void parameterQuery();
-
-float lookup_angle(int n);
 
 void jump_to_fullstepp();
 
@@ -39,15 +39,17 @@ void receiveEvent(int howMany);
 
 int mod(int xMod, int mMod);
 
-float lookup_sine(int m);
+int lookup_sine(int m);
 
 void setupTCInterrupts();
 
-void enableTCInterrupts();
+void enableTC4Interrupts();
 
-void disableTCInterrupts();
+void enableTC5Interrupts();
 
-void antiCoggingCal();
+void disableTC4Interrupts();
+
+void disableTC5Interrupts();
 
 void parameterEdit();
 
@@ -55,8 +57,6 @@ void step_response();
 
 void get_max_frequency();
 
-void calcBiquad(int Fc, int Fs, float Q);
-
-void filterEdit();
+float modulo(float dividend, float divisor);
 
 #endif
